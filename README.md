@@ -12,3 +12,4 @@ Skeleton of Citizens Loader module
 Herminio García González (@herminiogg)
 Jose Emilio Labra Gayo (@labra)
 Sergio García Álvarez (@Macana)
+Daniel Fernández Feito (@Daniff3)
