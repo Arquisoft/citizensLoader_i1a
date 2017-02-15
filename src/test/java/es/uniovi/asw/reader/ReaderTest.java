@@ -25,7 +25,7 @@ public class ReaderTest {
 		assertEquals("1985-10-10", juan.getAddress());
 		assertEquals("C/ Federico García Lorca 2", juan.getAddress());
 		assertEquals("Español", juan.getNationality());
-		assertEquals("90500084Y", juan.getID());
+		assertEquals("90500084Y", juan.getDNI());
 	}
 
 }

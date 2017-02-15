@@ -16,7 +16,8 @@ public class User {
 
 	private String Address;
 	private String Nationality;
-	private String ID;
+	private String DNI;
+	private String password;
 	
 	@Id @GeneratedValue
 	private Long id;
@@ -24,9 +25,9 @@ public class User {
 	User() {
 	}
 
-	public User(String iD) {
+	public User(String dni) {
 		super();
-		ID = iD;
+		this.DNI = dni;
 	}
 
 	
@@ -79,8 +80,12 @@ public class User {
 		Nationality = nationality;
 	}
 
-	public String getID() {
-		return ID;
+	public String getDNI() {
+		return DNI;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 
 	public Long getId() {
@@ -91,7 +96,7 @@ public class User {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((ID == null) ? 0 : ID.hashCode());
+		result = prime * result + ((DNI == null) ? 0 : DNI.hashCode());
 		return result;
 	}
 
@@ -104,10 +109,10 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (ID == null) {
-			if (other.ID != null)
+		if (DNI == null) {
+			if (other.DNI != null)
 				return false;
-		} else if (!ID.equals(other.ID))
+		} else if (!DNI.equals(other.DNI))
 			return false;
 		return true;
 	}
@@ -115,7 +120,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", Email=" + Email + ", dateOfBirth="
-				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", ID=" + ID + "]";
+				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", DNI=" + DNI + "]";
 	}
 	
 }
