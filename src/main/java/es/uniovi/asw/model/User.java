@@ -22,8 +22,7 @@ public class User {
 	@Id @GeneratedValue
 	private Long id;
 	
-	User() {
-	}
+	User(){}
 
 	public User(String identification) {
 		super();
@@ -124,7 +123,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", Email=" + Email + ", dateOfBirth="
-				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", identification=" + identification + "]";
+				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", Identification=" + identification + "]";
 	}
 	
 }
