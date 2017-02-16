@@ -6,7 +6,7 @@ import es.uniovi.asw.model.User;
 
 public class FileTest2 {
 
-	private static final String PATH = "src/test/resources/test3.xlsx";
+	private static final String PATH = "src/test/resources/test2.xlsx";
 	private static final User[] USERS = {
 			UserBuilder.newUser("Pepe", "Garcia", "pepe@hotmail.com",
 					"1980-05-17", "A street", "Spanish", "58435551H"),
@@ -77,7 +77,7 @@ public class FileTest2 {
 					"35848874F"), };
 
 	@Test
-	public void testFile1() {
+	public void testData() {
 		Reader reader = ReaderFactory.getReader();
 		new ReaderOutputTester().testData(reader, USERS, PATH);
 	}

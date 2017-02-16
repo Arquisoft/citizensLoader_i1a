@@ -25,7 +25,7 @@ public class FileTest1 {
 					"09940449X") };
 
 	@Test
-	public void testFile1() {
+	public void testData() {
 		Reader reader = ReaderFactory.getReader();
 		new ReaderOutputTester().testData(reader, USERS, PATH);
 	}
