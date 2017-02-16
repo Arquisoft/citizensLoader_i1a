@@ -117,7 +117,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", Email=" + Email + ", dateOfBirth="
-				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", DNI=" + identification + "]";
+				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", Identification=" + identification + "]";
 	}
 	
 }

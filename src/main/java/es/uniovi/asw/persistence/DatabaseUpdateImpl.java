@@ -40,7 +40,7 @@ public class DatabaseUpdateImpl implements DatabaseUpdate {
 				+ " FROM User u"
 				+ " WHERE u.DNI = ?1";
 		Long result = (Long) Jpa.getEntityManager().createQuery(query)
-		.setParameter(1, user.getDNI())
+		.setParameter(1, user.getIdentification())
 		.getSingleResult();
 		return result != 0;
 	}
@@ -57,7 +57,7 @@ public class DatabaseUpdateImpl implements DatabaseUpdate {
 				+ " u.Address!=?6 OR"
 				+ " u.Nationality!=?7";
 		Long result = (Long) Jpa.getEntityManager().createQuery(query)
-		.setParameter(1, user.getDNI())
+		.setParameter(1, user.getIdentification())
 		.setParameter(2, user.getFirstName())
 		.setParameter(3, user.getLastName())
 		.setParameter(4, user.getEmail())
