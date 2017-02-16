@@ -5,6 +5,7 @@ import java.util.List;
 import es.uniovi.asw.model.User;
 
 public class ReaderFactory {
+	
 	public static Reader getFooReader() {
 		return new Reader() {
 			@Override
