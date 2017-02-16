@@ -12,7 +12,7 @@ import es.uniovi.asw.logger.Logger;
 public class DatabaseUpdateImpl implements DatabaseUpdate {
 
 	Logger logger = new Logger();
-	
+
 	@Override
 	public void addToDatabase(List<User> users, String filename) throws IOException {
 		EntityManager em = Jpa.getEntityManager();
@@ -38,9 +38,9 @@ public class DatabaseUpdateImpl implements DatabaseUpdate {
 	public boolean doesUserExist(User user) {
 		String query = "SELECT COUNT(u)"
 				+ " FROM User u"
-				+ " WHERE u.DNI = ?1";
+				+ " WHERE u.identification = ?1";
 		Long result = (Long) Jpa.getEntityManager().createQuery(query)
-		.setParameter(1, user.getDNI())
+		.setParameter(1, user.getIdentification())
 		.getSingleResult();
 		return result != 0;
 	}
@@ -49,7 +49,7 @@ public class DatabaseUpdateImpl implements DatabaseUpdate {
 	public boolean doesUserMatch(User user) {
 		String query = "SELECT COUNT(u)"
 				+ " FROM User u"
-				+ " WHERE u.DNI = ?1"
+				+ " WHERE u.identification = ?1"
 				+ " AND (c.firstName !=?2 OR"
 				+ " u.lastName!=?3 OR"
 				+ " u.Email !=?4 OR"
@@ -57,7 +57,7 @@ public class DatabaseUpdateImpl implements DatabaseUpdate {
 				+ " u.Address!=?6 OR"
 				+ " u.Nationality!=?7";
 		Long result = (Long) Jpa.getEntityManager().createQuery(query)
-		.setParameter(1, user.getDNI())
+		.setParameter(1, user.getIdentification())
 		.setParameter(2, user.getFirstName())
 		.setParameter(3, user.getLastName())
 		.setParameter(4, user.getEmail())
