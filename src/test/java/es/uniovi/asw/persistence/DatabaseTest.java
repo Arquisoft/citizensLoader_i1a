@@ -30,8 +30,8 @@ public class DatabaseTest {
 
 	@Before
 	public void setUp() {
-		u1 = new User("1", "name", "lastName", "email", new Date(), "address", "nationality", "pass");
-		u2 = new User("2", "name2", "lastName2", "email2", new Date(), "address2", "nationality2", "pass2");
+		u1 = new User("1", "name", "lastName", "email", new Date(), "address", "nationality");
+		u2 = new User("2", "name2", "lastName2", "email2", new Date(), "address2", "nationality2");
 	}
 
 	/**
