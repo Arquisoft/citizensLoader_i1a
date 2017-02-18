@@ -29,18 +29,21 @@ public class User {
 		this.identification = identification;
 	}	
 	
-	public User(String identification, String firstName, String lastName, String email, Date dateOfBirth, 
-			String address, String nationality, String password) {
+	public User(String identification, String firstName, String lastName,
+			String email, Date datOfBirth, String Address, String Nationality){
+		
 		this(identification);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.Email = email;
-		this.dateOfBirth = dateOfBirth;
-		this.Address = address;
-		this.Nationality = nationality;
-		this.password = password;
+		this.dateOfBirth = datOfBirth;
+		this.Address = Address;
+		this.Nationality = Nationality;
+		
 	}
 
+	
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -95,6 +98,10 @@ public class User {
 	
 	public String getPassword() {
 		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Long getId() {
