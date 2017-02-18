@@ -29,6 +29,18 @@ public class User {
 		this.identification = identification;
 	}	
 	
+	public User(String identification, String firstName, String lastName, String email, Date dateOfBirth, 
+			String address, String nationality, String password) {
+		this(identification);
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.Email = email;
+		this.dateOfBirth = dateOfBirth;
+		this.Address = address;
+		this.Nationality = nationality;
+		this.password = password;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
