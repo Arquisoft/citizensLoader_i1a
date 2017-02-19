@@ -38,6 +38,7 @@ public class ReaderImpl implements Reader{
             
             //Iterate through each rows one by one
             Iterator<Row> rowIterator = sheet.iterator();
+            rowIterator.next();
             while (rowIterator.hasNext()) 
             {
             	String[] values = new String[8];
