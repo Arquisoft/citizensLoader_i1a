@@ -9,6 +9,11 @@ import javax.persistence.EntityTransaction;
 import es.uniovi.asw.model.User;
 import es.uniovi.asw.logger.Logger;
 
+/**
+ * An implementation of the DatabaseUpdate interface.
+ * @author Diego
+ *
+ */
 public class DatabaseUpdateImpl implements DatabaseUpdate {
 
 	Logger logger = new Logger();

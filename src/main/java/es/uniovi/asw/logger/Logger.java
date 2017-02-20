@@ -3,6 +3,10 @@ package es.uniovi.asw.logger;
 import java.io.*;
 import java.util.Date;
 
+/**
+ * Logger class used to write messages in the files
+ * @author Diego
+ */
 public class Logger {
 
 	BufferedWriter file;
