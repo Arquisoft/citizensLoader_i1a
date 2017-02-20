@@ -4,6 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+/**
+ * Simple class needed to access the EntityManager persistence element. 
+ * @author Diego
+ */
 public class Jpa {
 
 	private static EntityManagerFactory emf = null;

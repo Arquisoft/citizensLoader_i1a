@@ -5,6 +5,11 @@ import java.util.List;
 
 import es.uniovi.asw.model.User;
 
+/**
+ * Interface containing the template methods needed to update 
+ * an user into the databse.
+ * @author Diego
+ */
 public interface DatabaseUpdate {
 
 	/**

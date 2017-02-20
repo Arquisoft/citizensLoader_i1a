@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Citizen (or user) abstraction in the domain
+ */
 @Entity
 public class User {
 	
