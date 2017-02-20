@@ -13,7 +13,6 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProviderImpl;
 
 import es.uniovi.asw.model.User;
 

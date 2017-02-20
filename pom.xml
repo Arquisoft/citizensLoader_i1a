@@ -27,6 +27,20 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.22</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
+		<dependency>
+		    <groupId>org.hsqldb</groupId>
+		    <artifactId>hsqldb</artifactId>
+		    <version>2.3.2</version>
+		</dependency>
+
+		<!-- Persistence dependency -->
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.6.4</version>
+		</dependency>
 
 		<dependency>
 			<groupId>commons-cli</groupId>
@@ -85,11 +99,9 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.15</version>
 		</dependency>
-		<dependency>
-    		<groupId>org.hibernate</groupId>
-    		<artifactId>hibernate-entitymanager</artifactId>
-    	<version>5.0.2.Final</version>
-</dependency>
+		
+		<!-- <dependency><groupId>org.hibernate</groupId><artifactId>hibernate-entitymanager</artifactId><version>5.0.2.Final</version></dependency> -->
+
 	</dependencies>
 	<!--Build plugins -->
 	<build>

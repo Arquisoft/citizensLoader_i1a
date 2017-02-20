@@ -27,6 +27,7 @@ public class DatabaseTest {
 
 	private User u1, u2;
 	private DatabaseUpdateImpl dbimp;
+	private String file = "src/test/resources/dbtest.txt";
 
 	@Before
 	public void setUp() {
@@ -42,9 +43,9 @@ public class DatabaseTest {
 		List<User> list = new ArrayList<User>();
 		list.add(u1); list.add(u2);
 		dbimp = new DatabaseUpdateImpl();
-		
+		System.out.println("HAI");
 		try {
-			dbimp.addToDatabase(list, "dbtest.txt");
+			dbimp.addToDatabase(list, file);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -116,6 +117,9 @@ public class DatabaseTest {
 		assertTrue(dbimp.doesUserMatch(u2));
 	}
 	
+	/**
+	 * remove residual insertions in the database
+	 */
 	@After
 	public void tearDown() {
 		try {
@@ -131,7 +135,7 @@ public class DatabaseTest {
 
 			trx.commit();
 		} catch (Exception e) {
-			System.out.println("Can't tear down");
+			e.printStackTrace();
 		} 
 	}
 	
