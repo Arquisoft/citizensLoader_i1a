@@ -11,7 +11,7 @@ import javax.persistence.Id;
  */
 @Entity
 public class User {
-	
+
 	private String firstName;
 	private String lastName;
 	private String Email;
@@ -21,31 +21,40 @@ public class User {
 	private String Nationality;
 	private String identification;
 	private String password;
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
-	
-	User(){}
+
+	User() {
+	}
 
 	public User(String identification) {
 		super();
 		this.identification = identification;
-	}	
-	
-	public User(String firstName, String lastName,
-			String email,String Address, String Nationality, String identification){
-		
+	}
+
+	public User(String firstName, String lastName, String email,
+			Date dateOfBirth, String address, String nationality,
+			String identification) {
+		this(firstName, lastName, email, address, nationality,
+				identification);
+		setDateOfBirth(dateOfBirth);
+	}
+
+	public User(String firstName, String lastName, String email,
+			String Address, String Nationality,
+			String identification) {
+
 		this(identification);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.Email = email;
 		this.Address = Address;
 		this.Nationality = Nationality;
-		
+
 	}
 
-	
-	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -97,7 +106,7 @@ public class User {
 	public String getIdentification() {
 		return identification;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
@@ -114,7 +123,8 @@ public class User {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((identification == null) ? 0 : identification.hashCode());
+		result = prime * result + ((identification == null) ? 0
+				: identification.hashCode());
 		return result;
 	}
 
@@ -137,8 +147,11 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastName=" + lastName + ", Email=" + Email + ", dateOfBirth="
-				+ dateOfBirth + ", Address=" + Address + ", Nationality=" + Nationality + ", Identification=" + identification + "]";
+		return "User [firstName=" + firstName + ", lastName="
+				+ lastName + ", Email=" + Email + ", dateOfBirth="
+				+ dateOfBirth + ", Address=" + Address
+				+ ", Nationality=" + Nationality + ", Identification="
+				+ identification + "]";
 	}
-	
+
 }
