@@ -18,11 +18,13 @@ import es.uniovi.asw.model.User;
 
 public class ReaderImpl implements Reader{
 
+	List<User> users = new ArrayList<User>();
 	@Override
 	public List<User> readFile(String path) {
 		try
         {
-			List<User> users = new ArrayList<User>();
+			
+			
 			//Load the .xlsx
             FileInputStream file = new FileInputStream(new File(path));
             
@@ -48,7 +50,6 @@ public class ReaderImpl implements Reader{
                  
                 while (cellIterator.hasNext()) 
                 {
-                    
                 	Cell cell = cellIterator.next();
                 	
                     // Take the cell value as a String
@@ -57,10 +58,10 @@ public class ReaderImpl implements Reader{
                     // Add it to the array
                     values[counter] = value;
                     counter++;
-                   
                 }
                 
-                User user = new User(values[0], values[1], values[2], values[3], Date.valueOf(values[4]), values[5], values[6]);
+                User user = new User(values[0], values[1], values[2], values[4], values[5], values[6]);
+                //user.setDateOfBirth(Date.valueOf(values[3]));
                 users.add(user);
                 
                 System.out.println("");
@@ -70,7 +71,7 @@ public class ReaderImpl implements Reader{
         }catch(IOException e){
         	e.printStackTrace();
         }
-		return null;
+		return users;
 	}
 
 }

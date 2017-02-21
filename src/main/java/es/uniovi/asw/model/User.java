@@ -32,14 +32,13 @@ public class User {
 		this.identification = identification;
 	}	
 	
-	public User(String identification, String firstName, String lastName,
-			String email, Date datOfBirth, String Address, String Nationality){
+	public User(String firstName, String lastName,
+			String email,String Address, String Nationality, String identification){
 		
 		this(identification);
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.Email = email;
-		this.dateOfBirth = datOfBirth;
 		this.Address = Address;
 		this.Nationality = Nationality;
 		
