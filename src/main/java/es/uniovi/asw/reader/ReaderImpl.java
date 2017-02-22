@@ -21,12 +21,14 @@ import es.uniovi.asw.model.User;
 
 public class ReaderImpl implements Reader {
 
-	List<User> users = new ArrayList<User>();
+	List<User> users;
 
 	@Override
 	public List<User> readFile(String path) {
 		try {
 
+			//
+			users = new ArrayList<User>();
 			// Load the .xlsx
 			FileInputStream file = new FileInputStream(
 					new File(path));
