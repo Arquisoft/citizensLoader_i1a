@@ -12,7 +12,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -102,42 +101,27 @@ public class DatabaseTest {
 	}
 
 	/**
-	 * Test if a user matches other user in the database
-	 */
-	@Test
-	public void testDoesUserMatch() {
-		EntityManager map = Jpa.getEntityManager();
-		EntityTransaction trx = map.getTransaction();
-		trx.begin();
-		map.persist(u1);
-		map.persist(u2);
-		trx.commit();
-		
-		dbimp = new DatabaseUpdateImpl();
-		assertTrue(dbimp.doesUserMatch(u1));
-		assertTrue(dbimp.doesUserMatch(u2));
-	}
-	
-	/**
-	 * remove residual insertions in the database
-	 */
-	@After
-	public void tearDown() {
-		try {
-			EntityManager map = Jpa.getEntityManager();
-			EntityTransaction trx = map.getTransaction();
-			trx.begin();
-			
-			User user = map.find(User.class, u1.getId());
-			map.remove(user);
-			
-			user = map.find(User.class, u2.getId());
-			map.remove(user);
-
-			trx.commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} 
-	}
-	
+	   * Test if a user matches other user in the database
+	   */
+	  @Test
+	  public void testDoesUserMatch() {
+	    EntityManager map = Jpa.getEntityManager();
+	    EntityTransaction trx = map.getTransaction();
+	    trx.begin();
+	    map.persist(u1);
+	    map.persist(u2);
+	    trx.commit();
+	    
+	    dbimp = new DatabaseUpdateImpl();
+	    assertTrue(dbimp.doesUserMatch(u1));
+	    assertTrue(dbimp.doesUserMatch(u2));
+	    
+	    trx.begin();
+	    User user = map.find(User.class, u1.getId());
+	    map.remove(user);
+	    
+	    user = map.find(User.class, u2.getId());
+	    map.remove(user);
+	    trx.commit();
+	  }
 }
