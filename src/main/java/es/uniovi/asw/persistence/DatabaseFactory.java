@@ -15,7 +15,7 @@ public class DatabaseFactory {
 	 * @return
 	 * @throws IOException
 	 */
-	public DatabaseUpdate getDBImpl() throws IOException {
+	public static DatabaseUpdate getDBImpl() throws IOException {
 		return new DatabaseUpdateImpl();
 	}
 

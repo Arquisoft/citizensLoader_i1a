@@ -31,8 +31,8 @@ public class DatabaseTest {
 
 	@Before
 	public void setUp() {
-		u1 = new User("1", "name", "lastName", "email", new Date(), "address", "nationality");
-		u2 = new User("2", "name2", "lastName2", "email2", new Date(), "address2", "nationality2");
+		u1 = new User("name", "lastName", "email", new Date(), "address", "nationality", "1");
+		u2 = new User("name2", "lastName2", "email2", new Date(), "address2", "nationality2", "2");
 	}
 
 	/**
@@ -45,7 +45,8 @@ public class DatabaseTest {
 		dbimp = new DatabaseUpdateImpl();
 		System.out.println("HAI");
 		try {
-			dbimp.addToDatabase(list, file);
+			dbimp.addToDatabase(u1, file);
+			dbimp.addToDatabase(u2, file);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

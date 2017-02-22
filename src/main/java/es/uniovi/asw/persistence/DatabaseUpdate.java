@@ -18,7 +18,7 @@ public interface DatabaseUpdate {
 	 * @param filename File's name to be written on.
 	 * @throws IOException
 	 */
-	public void addToDatabase(List<User> users, String filename) throws IOException;
+	public void addToDatabase(User user, String filename) throws IOException;
 
 	/**
 	 * Checks if the parameter user already exists in the database.
