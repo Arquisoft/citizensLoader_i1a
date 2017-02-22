@@ -20,11 +20,22 @@
 			<property name="javax.persistence.jdbc.password" value="" />
 			-->
 			
-			<!-- MySQL Travis' database configuration -->
+			<!-- MySQL Travis' database configuration 
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/users" />
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value=""/>
+			-->
+			
+			<!-- MySQL MXJ embedded database configuration -->
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql:mxj://localhost:3306/citizensLoaderDB?server.basedir=database/MySQL&amp;createDatabaseIfNotExist=true&amp;server.initialize-user=false" />
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+			
+			<!--  
+			<property name="javax.persistence.jdbc.url"	value="jdbc:mysql:///test?propertiesTransform=com.mysql.management.jmx.ConnectorMXJPropertiesTransform"/>
+			-->
 		</properties>
 	</persistence-unit>
 
