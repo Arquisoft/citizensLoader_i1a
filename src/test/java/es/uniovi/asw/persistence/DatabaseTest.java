@@ -25,7 +25,7 @@ import es.uniovi.asw.model.User;
 public class DatabaseTest {
 
 	private User u1, u2;
-	private DatabaseUpdateImpl dbimp;
+	private DatabaseUpdate dbimp;
 	private String file = "src/test/resources/dbtest.txt";
 
 	@Before
@@ -36,12 +36,13 @@ public class DatabaseTest {
 
 	/**
 	 * Test the insertion of a list of users in the database
+	 * @throws IOException 
 	 */
 	@Test
-	public void testAddToDatabase() {
+	public void testAddToDatabase() throws IOException {
 		List<User> list = new ArrayList<User>();
 		list.add(u1); list.add(u2);
-		dbimp = new DatabaseUpdateImpl();
+		dbimp = DatabaseFactory.getDBImpl();
 		System.out.println("HAI");
 		try {
 			dbimp.addToDatabase(u1, file);
@@ -71,9 +72,10 @@ public class DatabaseTest {
 
 	/**
 	 * Test if a user exists in the database
+	 * @throws IOException 
 	 */
 	@Test
-	public void testDoesUserExist() {		
+	public void testDoesUserExist() throws IOException {		
 		EntityManager map = Jpa.getEntityManager();
 		EntityTransaction trx = map.getTransaction();
 		trx.begin();
@@ -81,7 +83,7 @@ public class DatabaseTest {
 		map.persist(u2);
 		trx.commit();
 		
-		dbimp = new DatabaseUpdateImpl();
+		dbimp = DatabaseFactory.getDBImpl();
 		assertTrue(dbimp.doesUserExist(u1));
 		assertTrue(dbimp.doesUserExist(u2));
 		
@@ -102,9 +104,10 @@ public class DatabaseTest {
 
 	/**
 	   * Test if a user matches other user in the database
+	 * @throws IOException 
 	   */
 	  @Test
-	  public void testDoesUserMatch() {
+	  public void testDoesUserMatch() throws IOException {
 	    EntityManager map = Jpa.getEntityManager();
 	    EntityTransaction trx = map.getTransaction();
 	    trx.begin();
@@ -112,7 +115,7 @@ public class DatabaseTest {
 	    map.persist(u2);
 	    trx.commit();
 	    
-	    dbimp = new DatabaseUpdateImpl();
+	    dbimp = DatabaseFactory.getDBImpl();
 	    assertTrue(dbimp.doesUserMatch(u1));
 	    assertTrue(dbimp.doesUserMatch(u2));
 	    

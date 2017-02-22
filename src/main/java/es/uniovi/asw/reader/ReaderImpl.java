@@ -17,6 +17,8 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import es.uniovi.asw.letter.PasswordGenerator;
 import es.uniovi.asw.model.User;
 
 public class ReaderImpl implements Reader {
@@ -71,6 +73,7 @@ public class ReaderImpl implements Reader {
 				User user = new User(values[0], values[1], values[2],
 						birthDate, values[4], values[5], values[6]);
 
+				user.setPassword(PasswordGenerator.generatePassword());
 				users.add(user);
 
 				System.out.println("");

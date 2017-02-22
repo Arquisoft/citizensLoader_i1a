@@ -44,9 +44,9 @@ public class DatabaseUpdateImpl implements DatabaseUpdate {
 
 	@Override
 	public boolean doesUserMatch(User user) {
-		String query = "SELECT COUNT(u)" + " FROM User u" + " WHERE u.identification = ?1" + " AND (c.firstName !=?2 OR"
+		String query = "SELECT COUNT(u)" + " FROM User u" + " WHERE u.identification = ?1" + " AND (u.firstName !=?2 OR"
 				+ " u.lastName!=?3 OR" + " u.Email !=?4 OR" + " u.dateOfBirth!=?5 OR" + " u.Address!=?6 OR"
-				+ " u.Nationality!=?7";
+				+ " u.Nationality!=?7)";
 		Long result = (Long) Jpa.getEntityManager().createQuery(query).setParameter(1, user.getIdentification())
 				.setParameter(2, user.getFirstName()).setParameter(3, user.getLastName())
 				.setParameter(4, user.getEmail()).setParameter(5, user.getDateOfBirth())
