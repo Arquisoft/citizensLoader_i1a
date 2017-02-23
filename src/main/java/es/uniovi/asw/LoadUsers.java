@@ -20,14 +20,16 @@ import es.uniovi.asw.reader.ReaderFactory;
 public class LoadUsers {
 
 	public static void main(String... args) {
+		final LoadUsers runner = new LoadUsers();
+		
 		if (args.length == 0) {
 			System.out.println("Proceeding to parse the default file. "
 					+ "If you want to specify other pass it as a parameter");
-			args[0] = "src/test/resources/test.xlsx";
+			runner.run("src/test/resources/test.xlsx");
 		}
-		
-		final LoadUsers runner = new LoadUsers();
-		runner.run(args);
+		else {
+			runner.run(args);
+		}	
 		
 	}
 
