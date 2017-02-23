@@ -1,7 +1,6 @@
 package es.uniovi.asw.persistence;
 
 import java.io.IOException;
-import java.util.List;
 
 import es.uniovi.asw.model.User;
 

@@ -13,7 +13,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -41,7 +40,7 @@ public class ReaderImpl implements Reader {
 			// Get first/desired sheet from the workbook
 			XSSFSheet sheet = workbook.getSheetAt(0);
 
-			DataFormatter formatter = new DataFormatter();
+			//DataFormatter formatter = new DataFormatter();
 			int columnCount = 0;
 
 			// Iterate through each rows one by one
@@ -80,8 +79,9 @@ public class ReaderImpl implements Reader {
 
 				rowCount++;
 			}
+			workbook.close();
 			file.close();
-
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
