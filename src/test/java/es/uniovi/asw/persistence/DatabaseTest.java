@@ -1,5 +1,5 @@
 package es.uniovi.asw.persistence;
-/**
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -16,14 +16,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import es.uniovi.asw.model.User;
-*/
+
 /**
  * Test for the insertion of users in the database
  * (and 2 auxiliary mathods used for that purpose)
  * @author Dani
  */
 public class DatabaseTest {
-/**
+
 	private User u1, u2;
 	private DatabaseUpdate dbimp;
 	private String file = "src/test/resources/dbtest.txt";
@@ -32,8 +32,12 @@ public class DatabaseTest {
 	public void setUp() {
 		u1 = new User("name", "lastName", "email", new Date(), "address", "nationality", "1");
 		u2 = new User("name2", "lastName2", "email2", new Date(), "address2", "nationality2", "2");
+		try {
+			dbimp = DatabaseFactory.getDBImpl();
+		} catch (IOException e) {
+		}
 	}
-*/
+
 	/**
 	 * Test the insertion of a list of users in the database
 	 * @throws IOException 
@@ -42,7 +46,7 @@ public class DatabaseTest {
 	public void testAddToDatabase() throws IOException {
 		List<User> list = new ArrayList<User>();
 		list.add(u1); list.add(u2);
-		dbimp = DatabaseFactory.getDBImpl();
+		
 		System.out.println("HAI");
 		try {
 			dbimp.addToDatabase(u1, file);
