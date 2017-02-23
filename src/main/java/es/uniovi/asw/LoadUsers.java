@@ -30,22 +30,18 @@ public class LoadUsers {
 
 	void run(String... args) {
 		Reader r = ReaderFactory.getReader();
-		DatabaseUpdate db = null;
+		/**DatabaseUpdate db = null;
 		try {
 			db = DatabaseFactory.getDBImpl();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 		String filename = "src/test/resources/test.xlsx";
 		Letter txt = new TxtLetter();
 		List<User> list = r.readFile(filename);
 		for (User u : list) {
-			try {
-				db.addToDatabase(u, "generatedFiles/errors.txt");
-				txt.write(u);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			//db.addToDatabase(u, "generatedFiles/errors.txt");
+			txt.write(u);
 		}
 		System.out.println("Los datos del fichero se han procesado.");
 	}

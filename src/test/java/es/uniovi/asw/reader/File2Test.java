@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import es.uniovi.asw.model.User;
 
-public class FileTest2 {
+public class File2Test {
 
 	private static final String PATH = "src/test/resources/test2.xlsx";
 	private static final User[] USERS = {

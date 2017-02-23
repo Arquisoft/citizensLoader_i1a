@@ -10,7 +10,7 @@ import es.uniovi.asw.model.User;
  * @author Pabloski
  *
  */
-public class FileTest1 {
+public class File1Test {
 
 	private static final String PATH = "src/test/resources/test.xlsx";
 	private static final User[] USERS = { UserBuilder.newUser("Juan",
