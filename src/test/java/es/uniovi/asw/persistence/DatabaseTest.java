@@ -15,6 +15,7 @@ import javax.persistence.EntityTransaction;
 import org.junit.Before;
 import org.junit.Test;
 
+import es.uniovi.asw.LoadUsers;
 import es.uniovi.asw.model.User;
 
 /**
@@ -42,7 +43,7 @@ public class DatabaseTest {
 	 * Test the insertion of a list of users in the database
 	 * @throws IOException 
 	 */
-/**	@Test
+	@Test
 	public void testAddToDatabase() throws IOException {
 		List<User> list = new ArrayList<User>();
 		list.add(u1); list.add(u2);
@@ -73,12 +74,12 @@ public class DatabaseTest {
 		
 		trx.commit();
 	}
-*/
+
 	/**
 	 * Test if a user exists in the database
 	 * @throws IOException 
 	 */
-/**	@Test
+    @Test
 	public void testDoesUserExist() throws IOException {		
 		EntityManager map = Jpa.getEntityManager();
 		EntityTransaction trx = map.getTransaction();
@@ -105,12 +106,12 @@ public class DatabaseTest {
 		assertTrue(!dbimp.doesUserExist(u1));
 		assertTrue(!dbimp.doesUserExist(u2));
 	}
-*/
+
 	/**
 	   * Test if a user matches other user in the database
 	   * @throws IOException 
 	   */
-/**	  @Test
+	  @Test
 	  public void testDoesUserMatch() throws IOException {
 	    EntityManager map = Jpa.getEntityManager();
 	    EntityTransaction trx = map.getTransaction();
@@ -131,5 +132,11 @@ public class DatabaseTest {
 	    map.remove(user);
 	    trx.commit();
 	  }
-	  **/
+	  
+	  @Test
+	  public void loadUsersTest() {
+		  LoadUsers l = new LoadUsers();
+		  LoadUsers.main();
+	  }
+	 
 }

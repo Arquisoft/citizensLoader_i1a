@@ -20,15 +20,18 @@ import es.uniovi.asw.reader.ReaderFactory;
 public class LoadUsers {
 
 	public static void main(String... args) {
-		if (args.length == 0)
-			System.out.println("You must pass as parameter the route of the excel file");
-		else {
-			final LoadUsers runner = new LoadUsers();
-			runner.run(args);
+		if (args.length == 0) {
+			System.out.println("Proceeding to parse the default file. "
+					+ "If you want to specify other pass it as a parameter");
+			args[0] = "src/test/resources/test.xlsx";
 		}
+		
+		final LoadUsers runner = new LoadUsers();
+		runner.run(args);
+		
 	}
 
-	void run(String... args) {
+	public void run(String... args) {
 		Reader r = ReaderFactory.getReader();
 		/**DatabaseUpdate db = null;
 		try {
@@ -36,7 +39,7 @@ public class LoadUsers {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}*/
-		String filename = "src/test/resources/test.xlsx";
+		String filename = args[0];
 		Letter txt = new TxtLetter();
 		List<User> list = r.readFile(filename);
 		for (User u : list) {
