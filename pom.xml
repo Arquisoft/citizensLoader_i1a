@@ -41,11 +41,11 @@
 			<artifactId>eclipselink</artifactId>
 			<version>2.6.4</version>
 		</dependency>
-		
+
 		<dependency>
-     		<groupId>org.hibernate</groupId>
-     		<artifactId>hibernate-entitymanager</artifactId>
-     		<version>5.0.2.Final</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.0.2.Final</version>
 		</dependency>
 
 		<dependency>
@@ -128,6 +128,14 @@
 	</dependencies>
 	<!--Build plugins -->
 	<build>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<includes>
+					<include>META-INF/persistence.xml</include>
+				</includes>
+			</resource>
+		</resources>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<pluginManagement>
 			<plugins>
